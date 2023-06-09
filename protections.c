@@ -6,94 +6,92 @@
 /*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:43:20 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/09 17:17:43 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/09 22:39:53 by maggie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_digits(int argc, char *argv[])
+int	ft_check_digits(int argc, char *argv[])
 {
-	int	i; // argv[i][a]
-	size_t	a; // argv[i][a]
-	
+	int		i;
+	size_t	a;
+
 	i = 0;
-	while (++i < argc) // iterates through the arrays
+	while (++i < argc)
 	{
 		a = 0;
-		while (argv[i][a]) // iterates inside each array
+		while (argv[i][a])
 		{
 			if (argv[i][a] == '-')
 				a++;
-			if (argv[i][a] < '0' || argv[i][a] > '9')
+			if (argv[i][a] < '0' || argv[i][a] > '9' || !(argv[i][a]))
 			{
 				ft_printf("Error\n");
-				return 0;
+				return (0);
 			}
-			a++;	
+			a++;
 		}
 	}
-		return (1);
+	return (1);
 }
 
-int	check_int_max(int argc, char *argv[])
+int	ft_check_int_range(int argc, char *argv[])
 {
-	int	i; // argv[i][a]
-	size_t	a; // argv[i][a]
-	
+	int	i;
+
 	i = 0;
-	while (++i < argc) // iterates through the arrays
+	while (++i < argc)
 	{
-		a = 0;
-		while (argv[i][a] && argv[i][a] == '0') // iterates inside each array
-			a++;
-		while (argv[i][a])
+		if (argv[i][0] == '-')
 		{
-			if (ft_strlen(&(argv[i][a])) > 10)
-				return 0;
-			else if (ft_strlen(&(argv[i][a])) < 10)
-				return 1;
-			else if (argv[i][a] > 2)
-				return 0;
-			else if (argv[i][a++] < 2)
-				return 1;
-			else if (argv[i][a] > 1)
-				return 0;
-			else if (argv[i][a++] < 1)
-				return 1;
-			else if (argv[i][a] > 4)
-				return 0;
-			else if (argv[i][a++] < 4)
-				return 1;
-			else if (argv[i][a] > 7)
-				return 0;
-			else if (argv[i][a++] < 7)
-				return 1;
-			else if (argv[i][a] > 4)
-				return 0;
-			else if (argv[i][a++] < 4)
-				return 1;
-			else if (argv[i][a] > 8)
-				return 0;
-			else if (argv[i][a++] < 8)
-				return 1;
-			else if (argv[i][a] > 3)
-				return 0;
-			else if (argv[i][a++] < 3)
-				return 1;
-			else if (argv[i][a] > 6)
-				return 0;
-			else if (argv[i][a++] < 6)
-				return 1;
-			else if (argv[i][a] > 4)
-				return 0;
-			else if (argv[i][a++] < 4)
-				return 1;
-			else if (argv[i][a] > 7)
-				return 0;
-			else if (argv[i][a++] < 7)
-				return 1;
+			if (!ft_check_int_min(argv[i]))
+			{
+				ft_printf("Error");
+				return (0);
+			}
+		}
+		else if (!ft_check_int_max(argv[i]))
+		{
+			ft_printf("Error");
+			return (0);
 		}
 	}
-		return (1);
+	return (1);
+}
+
+int	ft_check_int_max(char *str)
+{
+	size_t	a;
+
+	a = 0;
+	while (str[a] && str[a] == '0')
+		a++;
+	if (str[a])
+	{
+		if (ft_strlen(&(str[a])) > 10)
+			return (0);
+		else if (ft_strlen(&(str[a])) == 10 && \
+				ft_strncmp(&(str[a]), "2147483647", 10) > 0)
+			return (0);
+	}
+	return (1);
+}
+
+int	ft_check_int_min(char *str)
+{
+	size_t	a;
+
+	a = 1;
+	while (str[a] && str[a] == '0')
+		a++;
+	if (str[a])
+	{
+		if (ft_strlen(&(str[a])) > 10)
+			return (0);
+		else if (ft_strlen(&(str[a])) == 10 && \
+			ft_strncmp(&(str[a]), "2147483648", 10) > 0)
+			return (0);
+	}
+	return (1);
 }

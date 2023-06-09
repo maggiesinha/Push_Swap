@@ -6,7 +6,7 @@
 /*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:39:06 by mvalerio          #+#    #+#             */
-/*   Updated: 2023/06/08 21:42:02 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/09 22:34:58 by maggie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,14 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
 
 // Printf
 
-void	ft_putnbr_hex_lower_fd(unsigned long n, int fd, int *a);
-void	ft_pointer_address(unsigned long n, int fd, int *a);
-void	ft_putnbr_hex_upper_fd(unsigned long n, int fd, int *a);
-void	ft_putnbr_unsigned_fd(unsigned long n, int fd, int *a);
-void	ft_putnbr_printed(int n, int *a);
-void	ft_putstr_printed(char *s, int *a);
-void	ft_formater(size_t *i, const char *string, int *printed, va_list *list);
-int		ft_printf(const char *string, ...);
+void			ft_putnbr_hex_lower_fd(unsigned long n, int fd, int *a);
+void			ft_pointer_address(unsigned long n, int fd, int *a);
+void			ft_putnbr_hex_upper_fd(unsigned long n, int fd, int *a);
+void			ft_putnbr_unsigned_fd(unsigned long n, int fd, int *a);
+void			ft_putnbr_printed(int n, int *a);
+void			ft_putstr_printed(char *s, int *a);
+void			ft_formater(size_t *i, const char *string, \
+				int *printed, va_list *list);
+int				ft_printf(const char *string, ...);
 
 #endif
