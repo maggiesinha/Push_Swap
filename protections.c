@@ -6,7 +6,7 @@
 /*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:43:20 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/09 22:39:53 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/14 16:14:24 by maggie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,27 @@ int	ft_check_int_min(char *str)
 		else if (ft_strlen(&(str[a])) == 10 && \
 			ft_strncmp(&(str[a]), "2147483648", 10) > 0)
 			return (0);
+	}
+	return (1);
+}
+
+int	ft_check_duplicates(t_list *head)
+{
+	t_list	*lst;
+
+	while (head && head->next)
+	{
+		lst = head->next;
+		while (lst)
+		{
+			if (*(int *)(head->content) == *(int *)(lst->content))
+			{
+				ft_printf("Error");
+				return (0);
+			}
+			lst = lst->next;
+		}
+		head = head->next;
 	}
 	return (1);
 }
