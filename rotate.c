@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:33:29 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 11:46:09 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/16 14:50:14 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,18 @@
 
 void	ft_ra(t_list **head_a)
 {
-	t_list	**last;
-	*last = ft_lstlast(*head_a);
-	(*last)->next = head_a;
-	(*head_a)->next = NULL;
+	ft_rotate(head_a);
 	ft_printf("ra\n");
+}
+
+void	ft_rb(t_list **head_b)
+{
+	ft_rotate(head_b);
+	ft_printf("rb\n");
+}
+
+void	ft_rr(t_list **head_a, t_list **head_b)
+{
+	ft_rotate(head_a);
+	ft_rotate(head_b);
 }

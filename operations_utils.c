@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations2.c                                      :+:      :+:    :+:   */
+/*   operations_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:31:49 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 11:32:09 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/16 14:42:54 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,16 @@ int	ft_switch(t_list *lst)
 	lst->content = temp2;
 	lst->next->content = temp1;
 	return (1);
+}
+
+void	ft_rotate(t_list **head)
+{
+	t_list	*new_head;
+	t_list	*last;
+
+	new_head = (*head)->next;
+	last = ft_lstlast(*head);
+	last->next = *head;
+	(*head)->next = NULL;
+	*head = new_head;
 }

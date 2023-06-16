@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:52:15 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 11:26:03 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/16 14:48:55 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,21 @@ int	main(int argc, char *argv[])
 	ft_args_into_stack(argc, argv, &head_a);
 	if (!ft_check_duplicates(head_a))
 		return (0);
+
+
+	ft_printf("a: %d %d %d\n\n", *(int *)(head_a->content), *(int *)(head_a->next->content), *(int *)(head_a->next->next->content));
+	ft_ra(&head_a);
+	ft_printf("a: %d %d %d\n\n", *(int *)(head_a->content), *(int *)(head_a->next->content), *(int *)(head_a->next->next->content));
+	ft_sa(head_a);
+	ft_printf("a: %d %d %d\n\n", *(int *)(head_a->content), *(int *)(head_a->next->content), *(int *)(head_a->next->next->content));
+	ft_pb(&head_a, &head_b);
+	ft_pb(&head_a, &head_b);
+	ft_pb(&head_a, &head_b);
+	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
+	ft_rb(&head_b);
+	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
+
+
 	
+
 }
