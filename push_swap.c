@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:52:15 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 14:48:55 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:22:42 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int	main(int argc, char *argv[])
 	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
 	ft_rb(&head_b);
 	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
-
+	ft_rrb(&head_b);
+	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
 
 	
 

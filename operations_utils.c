@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:31:49 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 14:42:54 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:06:16 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,27 @@ void	ft_rotate(t_list **head)
 	last->next = *head;
 	(*head)->next = NULL;
 	*head = new_head;
+}
+
+void	ft_reverse_rotate(t_list **head)
+{
+	t_list	*last;
+	t_list	*second_last;
+
+	last = ft_lstlast(*head);
+	second_last = ft_lst_secondlast(*head);
+	second_last->next = NULL;
+	last->next = *head;
+	*head = last;
+	ft_printf("reverse rotate\n");
+	
+}
+
+t_list	*ft_lst_secondlast(t_list *lst)
+{
+	if (lst == NULL || lst->next == NULL)
+		return (NULL);
+	while (lst->next->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
