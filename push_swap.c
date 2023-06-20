@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:52:15 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 19:22:42 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:39:30 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	main(int argc, char *argv[])
 	ft_args_into_stack(argc, argv, &head_a);
 	if (!ft_check_duplicates(head_a))
 		return (0);
-
+	ft_printf("Length of string: %d\n\n\n", ft_lstlen(head_a));
+	ft_printf("Minimum number: %d\n\n\n", ft_lstmin(head_a));
 
 	ft_printf("a: %d %d %d\n\n", *(int *)(head_a->content), *(int *)(head_a->next->content), *(int *)(head_a->next->next->content));
 	ft_ra(&head_a);
