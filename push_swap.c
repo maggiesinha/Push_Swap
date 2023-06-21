@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:52:15 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/20 16:39:30 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:15:43 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,9 @@ int	main(int argc, char *argv[])
 	ft_args_into_stack(argc, argv, &head_a);
 	if (!ft_check_duplicates(head_a))
 		return (0);
-	ft_printf("Length of string: %d\n\n\n", ft_lstlen(head_a));
-	ft_printf("Minimum number: %d\n\n\n", ft_lstmin(head_a));
-
-	ft_printf("a: %d %d %d\n\n", *(int *)(head_a->content), *(int *)(head_a->next->content), *(int *)(head_a->next->next->content));
-	ft_ra(&head_a);
-	ft_printf("a: %d %d %d\n\n", *(int *)(head_a->content), *(int *)(head_a->next->content), *(int *)(head_a->next->next->content));
-	ft_sa(head_a);
-	ft_printf("a: %d %d %d\n\n", *(int *)(head_a->content), *(int *)(head_a->next->content), *(int *)(head_a->next->next->content));
-	ft_pb(&head_a, &head_b);
-	ft_pb(&head_a, &head_b);
-	ft_pb(&head_a, &head_b);
-	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
-	ft_rb(&head_b);
-	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
-	ft_rrb(&head_b);
-	ft_printf("b: %d %d %d\n\n", *(int *)(head_b->content), *(int *)(head_b->next->content), *(int *)(head_b->next->next->content));
-
 	
+	ft_print_lists(head_a, head_b);
+	ft_first_sort(&head_a, &head_b);
+	ft_print_lists(head_a, head_b);
 
 }
