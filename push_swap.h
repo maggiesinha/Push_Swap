@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 20:26:35 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/21 18:57:17 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/23 17:45:18 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	ft_rrr(t_list **head_a, t_list **head_b);
 // Algorithm
 int		ft_lstlen(t_list *lst);
 int		ft_lstmin(t_list *lst);
-int		ft_median(int length, t_list *lst);
-void	ft_first_sort(t_list **head_a, t_list **head_b);
+int		ft_lstmedian(int length, t_list *lst);
+void	ft_position(t_list *lst);
 
 // Tests
 void	ft_print_lists(t_list *head_a, t_list *head_b);

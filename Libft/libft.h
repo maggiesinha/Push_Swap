@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:39:06 by mvalerio          #+#    #+#             */
-/*   Updated: 2023/06/09 22:34:58 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/23 17:37:20 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	size_t position;
+	size_t cost;
 }					t_list;
 
 t_list			*ft_lstnew(void *content);

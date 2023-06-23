@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 15:56:55 by mvalerio          #+#    #+#             */
-/*   Updated: 2023/06/21 19:26:16 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/23 17:42:54 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_lstmin(t_list	*lst)
 	return (minimum);
 }
 
-int	ft_median(int length, t_list *lst)
+int	ft_lstmedian(int length, t_list *lst)
 {
 	int	median;
 	int	reference;
@@ -68,18 +68,17 @@ int	ft_median(int length, t_list *lst)
 	return (median);
 }
 
-void	ft_first_sort(t_list **head_a, t_list **head_b)
+void	ft_position(t_list *lst)
 {
-	int	median;
-	t_list **head_a_copy;
-
-	head_a_copy = head_a;
-	median = ft_median(ft_lstlen(*head_a), *head_a);
-	while (*head_a)
+	size_t position;
+	
+	position = 1;
+	if (!lst)
+		return ;
+	while (lst)
 	{
-		ft_pb(head_a, head_b);
-		if ((*head_a) && *(int *)((*head_a)->content) < median)
-			ft_rb(head_b);
+			lst->position = position;
+			lst = lst->next;
+			position++;
 	}
-	*head_a = *head_a_copy;
 }
