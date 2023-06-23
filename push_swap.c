@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:52:15 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/23 17:46:14 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:04:12 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,4 @@ int	main(int argc, char *argv[])
 	
 	ft_print_lists(head_a, head_b);
 	
-	ft_position(head_a);
-	ft_printf("\nFirst position: %d\n", head_a->position);
-	ft_printf("\nSecond position: %d\n", head_a->next->position);
-
 }

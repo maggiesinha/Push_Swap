@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 20:26:35 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/23 17:45:18 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:12:14 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,15 @@ void	ft_rra(t_list **head_a);
 void	ft_rrb(t_list **head_b);
 void	ft_rrr(t_list **head_a, t_list **head_b);
 
-// Algorithm
+// Data
 int		ft_lstlen(t_list *lst);
 int		ft_lstmin(t_list *lst);
 int		ft_lstmedian(int length, t_list *lst);
 void	ft_position(t_list *lst);
+void	ft_cost(t_list	*lst);
+
+// Algorithm
+
 
 // Tests
 void	ft_print_lists(t_list *head_a, t_list *head_b);
