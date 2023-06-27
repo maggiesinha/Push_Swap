@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:39:06 by mvalerio          #+#    #+#             */
-/*   Updated: 2023/06/23 17:37:20 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:08:57 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ typedef struct s_list
 	struct s_list	*next;
 	size_t position;
 	size_t cost;
+	size_t total_cost;
+	struct s_list	*tar;
 }					t_list;
 
 t_list			*ft_lstnew(void *content);

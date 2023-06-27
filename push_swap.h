@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 20:26:35 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/27 15:19:40 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/27 20:29:10 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int		ft_switch(t_list **lst);
 void	ft_rotate(t_list **head);
 t_list	*ft_lst_secondlast(t_list *lst);
 void	ft_reverse_rotate(t_list **head);
-t_list	*ft_lsttiny_biggest(t_list *lst);
+t_list	*ft_lst_biggest(t_list *lst);
 
 //		Utils 2
-t_list	*ft_lsttiny_smallest(t_list *lst);
+t_list	*ft_lst_smallest(t_list *lst);
 
 // Operations
 //		Swap and Push
@@ -57,17 +57,21 @@ void	ft_rrr(t_list **head_a, t_list **head_b);
 
 // Data
 //		Data 1
-int		ft_lstlen(t_list *lst);
+size_t		ft_lstlen(t_list *lst);
 int		ft_lstmin(t_list *lst);
 int		ft_lstmedian(int length, t_list *lst);
 void	ft_position(t_list *lst);
-void	ft_cost(t_list	*lst);
+void	ft_individual_cost(t_list	*lst);
 
 //		Data 2
-
+void	ft_total_cost(t_list *head_b, t_list *head_a);
+void	ft_smallest_bigger(t_list **i_a, t_list *head_b);
+void	ft_set_targets(t_list *head_a, t_list *head_b);
+void	ft_refresh_nodes(t_list *head_a, t_list *head_b);
 
 // Algorithm
 void	three_sort_a(t_list **lst);
+void	ft_sort_small(t_list **head_a);
 
 // Tests
 void	ft_print_lists(t_list *head_a, t_list *head_b);

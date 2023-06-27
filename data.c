@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithm.c                                        :+:      :+:    :+:   */
+/*   data.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 15:56:55 by mvalerio          #+#    #+#             */
-/*   Updated: 2023/06/23 19:03:26 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/27 20:28:09 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstlen(t_list *lst)
+size_t	ft_lstlen(t_list *lst)
 {
-	int length;
+	size_t length;
 	
 	length = 0;
 	if (!lst)
@@ -83,7 +83,7 @@ void	ft_position(t_list *lst)
 	}
 }
 
-void	ft_cost(t_list	*lst)
+void	ft_individual_cost(t_list	*lst)
 {
 	size_t	length;
 	

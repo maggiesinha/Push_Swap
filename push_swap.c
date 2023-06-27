@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:52:15 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/27 15:01:04 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/27 20:04:49 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,16 @@ int	main(int argc, char *argv[])
 	ft_args_into_stack(argc, argv, &head_a);
 	if (!ft_check_duplicates(head_a))
 		return (0);
-	
+	if (ft_lstlen(head_a) <= 3)
+	{
+		ft_sort_small(&head_a);
+		return (0);
+	}
+
+	while (ft_lstlen(head_a) > 3)
+		ft_pb(&head_a, &head_b);
+	ft_refresh_nodes(head_a, head_b);
 
 
-	
-	ft_print_lists(head_a, head_b);
-	three_sort_a(&head_a);
-	ft_print_lists(head_a, head_b);
 
 }

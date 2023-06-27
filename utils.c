@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:31:49 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/27 15:00:29 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:58:39 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,16 @@ t_list	*ft_lst_secondlast(t_list *lst)
 	return (lst);
 }
 
-t_list	*ft_lsttiny_biggest(t_list *lst)
+t_list	*ft_lst_biggest(t_list *lst)
 {
-	if (*(int *)(lst->content) > *(int *)(lst->next->content))
+	t_list	*biggest;
+	
+	biggest = lst;
+	while (lst && lst->next)
 	{
-		if (*(int *)(lst->content) > *(int *)(lst->next->next->content))
-			return (lst);
-		else
-			return (lst->next->next);
+		if (*(int *)(lst->next->content) > *(int *)(lst->content))
+			biggest = lst->next;
+		lst = lst->next;
 	}
-	if (*(int *)(lst->next->content) > *(int *)(lst->next->next->content))
-		return (lst->next);
-	else
-		return (lst->next->next);
+	return (biggest);
 }
