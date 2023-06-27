@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_utils.c                                 :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:31:49 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 19:06:16 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/27 15:00:29 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_switch(t_list *lst)
+int	ft_switch(t_list **lst)
 {
 	int	*temp1;
 	int	*temp2;
@@ -23,12 +23,12 @@ int	ft_switch(t_list *lst)
 	temp2 = malloc(sizeof(int));
 	if (!temp2)
 		return (0);
-	*temp1 = *(int *)(lst->content);
-	*temp2 = *(int *)(lst->next->content);
-	free (lst->content);
-	free ((lst->next)->content);
-	lst->content = temp2;
-	lst->next->content = temp1;
+	*temp1 = *(int *)((*lst)->content);
+	*temp2 = *(int *)((*lst)->next->content);
+	free ((*lst)->content);
+	free (((*lst)->next)->content);
+	(*lst)->content = temp2;
+	(*lst)->next->content = temp1;
 	return (1);
 }
 
@@ -53,9 +53,7 @@ void	ft_reverse_rotate(t_list **head)
 	second_last = ft_lst_secondlast(*head);
 	second_last->next = NULL;
 	last->next = *head;
-	*head = last;
-	ft_printf("reverse rotate\n");
-	
+	*head = last;	
 }
 
 t_list	*ft_lst_secondlast(t_list *lst)
@@ -65,4 +63,19 @@ t_list	*ft_lst_secondlast(t_list *lst)
 	while (lst->next->next != NULL)
 		lst = lst->next;
 	return (lst);
+}
+
+t_list	*ft_lsttiny_biggest(t_list *lst)
+{
+	if (*(int *)(lst->content) > *(int *)(lst->next->content))
+	{
+		if (*(int *)(lst->content) > *(int *)(lst->next->next->content))
+			return (lst);
+		else
+			return (lst->next->next);
+	}
+	if (*(int *)(lst->next->content) > *(int *)(lst->next->next->content))
+		return (lst->next);
+	else
+		return (lst->next->next);
 }

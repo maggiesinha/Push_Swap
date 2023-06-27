@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   swap_and_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maggie <maggie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 04:15:24 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/16 11:35:59 by maggie           ###   ########.fr       */
+/*   Updated: 2023/06/27 14:50:36 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sa(t_list *head_a)
+int	ft_sa(t_list **head_a)
 {
-	if (head_a && head_a->next)
+	if (*head_a && (*head_a)->next)
 	{
 		if(!ft_switch(head_a))
 			return (0);
@@ -23,9 +23,9 @@ int	ft_sa(t_list *head_a)
 	return (1);
 }
 
-int	ft_sb(t_list *head_b)
+int	ft_sb(t_list **head_b)
 {
-	if (head_b && head_b->next)
+	if (*head_b && (*head_b)->next)
 	{
 		if(!ft_switch(head_b))
 			return (0);
@@ -34,14 +34,14 @@ int	ft_sb(t_list *head_b)
 	return (1);
 }
 
-int	ft_ss(t_list *head_a, t_list *head_b)
+int	ft_ss(t_list **head_a, t_list **head_b)
 {
-	if (head_a && head_a->next)
+	if (*head_a && (*head_a)->next)
 	{
 		if(!ft_switch(head_a))
 			return (0);
 	}
-	if (head_b && head_b->next)
+	if (*head_b && (*head_b)->next)
 	{
 		if(!ft_switch(head_b))
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 20:26:35 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/23 19:12:14 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/27 15:19:40 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,22 @@ int		ft_check_duplicates(t_list *lst);
 // Lists
 void	ft_args_into_stack(int argc, char *argv[], t_list **head_a);
 
-// Operations Utils
-int		ft_switch(t_list *lst);
+// Utils
+//		utils 1
+int		ft_switch(t_list **lst);
 void	ft_rotate(t_list **head);
 t_list	*ft_lst_secondlast(t_list *lst);
 void	ft_reverse_rotate(t_list **head);
+t_list	*ft_lsttiny_biggest(t_list *lst);
 
+//		Utils 2
+t_list	*ft_lsttiny_smallest(t_list *lst);
 
 // Operations
 //		Swap and Push
-int		ft_sa(t_list *head_a);
-int		ft_sb(t_list *head_b);
-int		ft_ss(t_list *head_a, t_list *head_b);
+int		ft_sa(t_list **head_a);
+int		ft_sb(t_list **head_b);
+int		ft_ss(t_list **head_a, t_list **head_b);
 int		ft_pa(t_list **head_a, t_list **head_b);
 int		ft_pb(t_list **head_a, t_list **head_b);
 
@@ -52,14 +56,18 @@ void	ft_rrb(t_list **head_b);
 void	ft_rrr(t_list **head_a, t_list **head_b);
 
 // Data
+//		Data 1
 int		ft_lstlen(t_list *lst);
 int		ft_lstmin(t_list *lst);
 int		ft_lstmedian(int length, t_list *lst);
 void	ft_position(t_list *lst);
 void	ft_cost(t_list	*lst);
 
-// Algorithm
+//		Data 2
 
+
+// Algorithm
+void	three_sort_a(t_list **lst);
 
 // Tests
 void	ft_print_lists(t_list *head_a, t_list *head_b);
