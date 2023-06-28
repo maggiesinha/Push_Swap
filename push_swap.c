@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:52:15 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/27 20:04:49 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:22:45 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ int	main(int argc, char *argv[])
 		ft_pb(&head_a, &head_b);
 	ft_refresh_nodes(head_a, head_b);
 
-
-
+	while (head_b)
+	{
+		printf("The total cost of node number %zu is %zu\n", head_b->position, head_b->total_cost);
+		head_b = head_b->next;
+	}
+	
 }

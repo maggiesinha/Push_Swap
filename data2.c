@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:24:00 by mvalerio          #+#    #+#             */
-/*   Updated: 2023/06/27 20:36:38 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:20:49 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,14 @@
 	}
 }
 
-void	ft_smallest_bigger(t_list **i_a, t_list *head_b)
+void	ft_smallest_bigger(t_list *i_a, t_list *head_b)
 {
-	while (*i_a)
+	while (i_a)
 	{
-		if (*(int *)((*i_a)->content) \
-			< *(int *)(head_b->tar->content) && \
-			*(int *)((*i_a)->content) > *(int *)(head_b->content))
-				(*i_a) = head_b->tar;
-			(*i_a) = (*i_a)->next;
+		if (*(int *)(i_a->content) < *(int *)(head_b->tar->content) && \
+			*(int *)(i_a->content) > *(int *)(head_b->content))
+			head_b->tar = i_a;
+		i_a = i_a->next;
 	}
 }
 
@@ -74,7 +73,7 @@ void	ft_set_targets(t_list *head_a, t_list *head_b)
 			{
 				head_b->tar = i_a;
 				i_a = i_a->next;
-				ft_smallest_bigger(&i_a, head_b);
+				ft_smallest_bigger(i_a, head_b);
 				break ;
 			}
 		}

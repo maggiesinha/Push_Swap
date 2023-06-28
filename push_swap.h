@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 20:26:35 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/27 20:29:10 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:20:33 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_rrr(t_list **head_a, t_list **head_b);
 
 // Data
 //		Data 1
-size_t		ft_lstlen(t_list *lst);
+size_t	ft_lstlen(t_list *lst);
 int		ft_lstmin(t_list *lst);
 int		ft_lstmedian(int length, t_list *lst);
 void	ft_position(t_list *lst);
@@ -65,7 +65,7 @@ void	ft_individual_cost(t_list	*lst);
 
 //		Data 2
 void	ft_total_cost(t_list *head_b, t_list *head_a);
-void	ft_smallest_bigger(t_list **i_a, t_list *head_b);
+void	ft_smallest_bigger(t_list *i_a, t_list *head_b);
 void	ft_set_targets(t_list *head_a, t_list *head_b);
 void	ft_refresh_nodes(t_list *head_a, t_list *head_b);
 
