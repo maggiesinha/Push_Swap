@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 20:26:35 by maggie            #+#    #+#             */
-/*   Updated: 2023/06/28 16:20:33 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:18:43 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void	ft_sort_small(t_list **head_a);
 
 // Tests
 void	ft_print_lists(t_list *head_a, t_list *head_b);
+void	ft_costs_and_positions(t_list *head_a, t_list *head_b);
 
 #endif

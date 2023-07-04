@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvalerio <mvalerio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mvalerio <mvalerio@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:24:00 by mvalerio          #+#    #+#             */
-/*   Updated: 2023/06/28 16:20:49 by mvalerio         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:24:53 by mvalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,27 @@
 
  void	ft_total_cost(t_list *head_b, t_list *head_a)
 {
-	t_list	*temp_b;
-
-	temp_b = head_b;
-	while	(temp_b)
+	size_t	a_len;
+	size_t	b_len;
+	
+	a_len = ft_lstlen(head_a);
+	b_len = ft_lstlen(head_b);
+	
+	while	(head_b)
 	{
-		if (temp_b->position > ft_lstlen(head_b) / 2 && \
-		temp_b->tar->position > ft_lstlen(head_a) / 2)
+		if ((head_b->position > b_len / 2 && head_b->tar->position > a_len / 2) || \
+		(head_b->position < b_len / 2 && head_b->tar->position < a_len / 2) || \
+		(a_len % 2 == 0 && head_b->tar->position == a_len / 2 + 1) || \
+		(b_len % 2 == 0 && head_b->position == b_len / 2 + 1))
 		{
-			if (temp_b->tar->cost > temp_b->cost)
-				temp_b->total_cost = temp_b->tar->cost;
+			if (head_b->tar->cost > head_b->cost)
+				head_b->total_cost = head_b->tar->cost;
 			else
-				temp_b->total_cost = temp_b->cost;
-		}
-		else if (temp_b->position < ft_lstlen(head_b) / 2 && \
-		temp_b->tar->position < ft_lstlen(head_a) / 2)
-		{
-			if (temp_b->tar->cost > temp_b->cost)
-				temp_b->total_cost = temp_b->tar->cost;
-			else
-				temp_b->total_cost = temp_b->cost;
+				head_b->total_cost = head_b->cost;
 		}
 		else
-			temp_b->total_cost = temp_b->cost + temp_b->tar->cost;
-		temp_b = temp_b->next;
+			head_b->total_cost = head_b->cost + head_b->tar->cost;
+		head_b = head_b->next;
 	}
 }
 
@@ -89,5 +86,4 @@ void	ft_refresh_nodes(t_list *head_a, t_list *head_b)
 	ft_individual_cost(head_b);
 	ft_set_targets(head_a, head_b);
 	ft_total_cost(head_b, head_a);
-
 }
